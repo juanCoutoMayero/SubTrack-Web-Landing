@@ -47,9 +47,14 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
           </button>
         </div>
 
-        <button className="px-5 py-2 rounded-full bg-white text-[#1A120D] text-sm font-bold hover:bg-[#F59773] transition-colors">
+        <a
+          href="https://apps.apple.com/us/app/subb/id6756507119"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2 rounded-full bg-white text-[#1A120D] text-sm font-bold hover:bg-[#F59773] transition-colors"
+        >
           Get Started
-        </button>
+        </a>
       </motion.nav>
     </header>
   );
