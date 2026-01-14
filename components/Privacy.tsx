@@ -1,13 +1,9 @@
-
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ShieldCheck, Lock, Eye, FileText, ChevronLeft } from 'lucide-react';
 
-interface PrivacyProps {
-  onBack: () => void;
-}
-
-const Privacy: React.FC<PrivacyProps> = ({ onBack }) => {
+const Privacy: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,37 +11,35 @@ const Privacy: React.FC<PrivacyProps> = ({ onBack }) => {
   const sections = [
     {
       icon: <Eye className="w-6 h-6 text-[#F59773]" />,
-      title: "Data Collection",
-      content: "We collect minimal information required to provide our services. This include subscription names, costs, and billing periods that you manually enter. We do not automatically track your bank accounts or credit cards."
-    },
-    {
-      icon: <Lock className="w-6 h-6 text-[#F59773]" />,
-      title: "Security",
-      content: "Your data is stored securely and encrypted. We prioritize your privacy and ensure that only you have access to your subscription details. We use industry-standard security protocols to protect your information."
+      title: "Data Collection & Usage",
+      content: "We collect minimal information required to provide our services. This includes subscription names, costs, and billing periods that you manually enter ('User Content'). This data is used solely to provide and improve the App's core functionality."
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-[#F59773]" />,
-      title: "Third-Party Sharing",
-      content: "We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. Your data remains yours alone."
+      title: "Diagnostics & Analytics",
+      content: "To ensure a stable experience, we collect anonymous diagnostic data such as crash logs and performance metrics ('Diagnostics'). We use industry-standard tools like Firebase Crashlytics to identify and fix bugs."
+    },
+    {
+      icon: <Lock className="w-6 h-6 text-[#F59773]" />,
+      title: "No User Tracking",
+      content: "We do not track you across apps or websites owned by other companies. Your data is not used for targeted advertising or shared with data brokers. We value your anonymity."
     },
     {
       icon: <FileText className="w-6 h-6 text-[#F59773]" />,
-      title: "Policy Updates",
-      content: "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page."
+      title: "Data Retention",
+      content: "Your data remains on your device and our secure cloud storage for as long as you maintain your account. You can request data deletion at any time through the app settings."
     }
   ];
 
   return (
     <div className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
-      <motion.button
-        onClick={onBack}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+      <Link
+        to="/"
         className="flex items-center gap-2 text-white/50 hover:text-[#F59773] transition-colors mb-12 group"
       >
         <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
         Back to Home
-      </motion.button>
+      </Link>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -85,7 +79,7 @@ const Privacy: React.FC<PrivacyProps> = ({ onBack }) => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
