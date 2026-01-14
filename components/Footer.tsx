@@ -1,24 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onNavigate: (view: 'home' | 'privacy') => void;
-}
-
-const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-[#1A120D] pt-20 pb-10 px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <button
-              onClick={() => onNavigate('home')}
+            <Link
+              to="/"
               className="flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity"
             >
               <div className="w-10 h-10 rounded-xl bg-[#F59773] flex items-center justify-center font-bold text-[#1A120D] text-xl">
                 S
               </div>
               <span className="text-2xl font-bold font-['Outfit']">SubTrack</span>
-            </button>
+            </Link>
             <p className="text-white/40 max-w-sm mb-6">
               The professional subscription manager designed to help you Track, Manage, and Save your recurring expenses effortlessly.
             </p>
@@ -27,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-[#F59773]">Product</h4>
             <ul className="space-y-4 text-sm text-white/60">
-              <li><button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">Features</button></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Features</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Roadmap</a></li>
             </ul>
@@ -37,14 +34,22 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-[#F59773]">Legal</h4>
             <ul className="space-y-4 text-sm text-white/60">
               <li>
-                <button
-                  onClick={() => onNavigate('privacy')}
+                <Link
+                  to="/privacy"
                   className="hover:text-white transition-colors text-left"
                 >
                   Privacy Policy
-                </button>
+                </Link>
               </li>
-              <li><a href="#terms" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li>
+                <Link
+                  to="/terms"
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+
               <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
             </ul>
           </div>
