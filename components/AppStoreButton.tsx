@@ -5,7 +5,7 @@ import { Smartphone } from 'lucide-react';
 const AppStoreButton: React.FC = () => {
   return (
     <a
-      href="https://apps.apple.com/us/app/subb/id6756507119"
+      href="https://apps.apple.com/us/app/apple-tv/id1174078549"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-3 bg-white text-[#1A120D] px-8 py-4 rounded-2xl hover:bg-[#F59773] transition-all duration-300 shadow-xl hover:shadow-[#F59773]/20 group"

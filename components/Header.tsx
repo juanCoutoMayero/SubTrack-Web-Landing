@@ -54,7 +54,7 @@ const Header: React.FC = () => {
         </div>
 
         <a
-          href="https://apps.apple.com/us/app/subb/id6756507119"
+          href="https://apps.apple.com/us/app/apple-tv/id1174078549"
           target="_blank"
           rel="noopener noreferrer"
           className="px-5 py-2 rounded-full bg-white text-[#1A120D] text-sm font-bold hover:bg-[#F59773] transition-colors"
